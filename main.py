@@ -36,30 +36,23 @@ def main():
             client = RocketBotRoyale(email, password)
 
             client.collect_timed_bonus()
-            if logger:
-                logger.info("Coins collected successfully.")
+            logger.info("Coins collected successfully.")
 
             coins = client.account().wallet["coins"]
-            if logger:
-                logger.info(f"Your coins now: {coins}.")
+            logger.info(f"Your coins now: {coins}.")
 
             if args.auto_open_crates and coins >= 1000:
                 award = client.buy_crate()
-                if logger:
-                    logger.info(f"Crate award is: {award.award_id}")
+                logger.info(f"Crate award is: {award.award_id}")
 
         except AuthenticationError as e:
-            if logger:
-                logger.error(f"Unable to authenticate: {e}")
+            logger.error(f"Unable to authenticate: {e}")
         except CollectTimedBonusError as e:
-            if logger:
-                logger.info(f"Bonus not available to claim yet: {e}")
+            logger.info(f"Bonus not available to claim yet: {e}")
         except LootBoxError as e:
-            if logger:
-                logger.error(f"Unable to open crates: {e}")
+            logger.error(f"Unable to open crates: {e}")
         except Exception as e:
-            if logger:
-                logger.exception(f"An unexpected error occurred: {e}")
+            logger.exception(f"An unexpected error occurred: {e}")
         finally:
             sleep(60 * 5)
 
