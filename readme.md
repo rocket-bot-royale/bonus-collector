@@ -2,7 +2,10 @@
 
 ⚠️️ For Educational Use Only!
 
+<img align="left" style="width: 100px; height: auto;" src="https://i.ibb.co/mhxJDdx/image.png">
+
 Automates bonus collection and crate purchases for RocketBotRoyale, using our Unofficial Python Client for Rocket Bot Royale Game API available at [GitHub](https://github.com/Rocket-Bot-Royale/api). It logs in with provided credentials or prompts for them, collects timed bonuses, checks coin balance, and optionally opens crates if sufficient coins are available.
+
 
 ## Installation
 
